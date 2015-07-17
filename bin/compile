@@ -22,8 +22,8 @@ ls -alrt $RESOURCES
 # Files
 JDK_BLOB=http://storage.googleapis.com/rippmn/jdk-7u67-linux-x64.gz
 JDK=jdk-7u67-linux-x64.gz
-MULE_BLOB=http://storage.googleapis.com/rippmn/mule-standalone-3.5.0.tar.gz
-MULE=mule-standalone-3.5.0.tar.gz
+MULE_BLOB=https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz
+MULE=mule-standalone-3.7.0.tar.gz
 
 if [ ! -d $BUILD_DIR/local ]
 then
@@ -31,7 +31,7 @@ then
 fi
 
 # Explode the Mule tarball to BUILD_DIR
-if [ ! -e $BUILD_DIR/local/mule-standalone-3.5.0 ]
+if [ ! -e $BUILD_DIR/local/mule-standalone-3.7.0 ]
 then
   if [ ! -e $CACHE_DIR/$MULE ]
   then
@@ -64,9 +64,9 @@ do
 echo $f
 done
 ls
-mv theApp/* $BUILD_DIR/local/mule-standalone-3.5.0/apps/
+mv theApp/* $BUILD_DIR/local/mule-standalone-3.7.0/apps/
 rm -rf theApp
-#mv $BUILD_DIR/$f $BUILD_DIR/local/mule-standalone-3.5.0/apps/$f
+#mv $BUILD_DIR/$f $BUILD_DIR/local/mule-standalone-3.7.0/apps/$f
 
 
 echo "Complete."
