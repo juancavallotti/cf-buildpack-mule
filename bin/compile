@@ -45,13 +45,26 @@ then
 fi
 
 # Explode the OpenJDK tarball to BUILD_DIR
+#if [ ! -e $BUILD_DIR/local/jdk1.7.0_67 ]
+#then
+#  echo "------> Installing JDK ($JDK)..."
+#  if [ ! -e $CACHE_DIR/$JDK ]
+#  then
+#    OLDPWD=$(pwd)
+#    cd $CACHE_DIR && wget $JDK_BLOB 
+##    cd $OLDPWD
+#  fi
+#  tar -xzf $CACHE_DIR/$JDK -C $BUILD_DIR/local
+#fi
+
+# Explode the OpenJDK tarball to BUILD_DIR
 if [ ! -e $BUILD_DIR/local/jdk1.7.0_67 ]
 then
   echo "------> Installing JDK ($JDK)..."
   if [ ! -e $CACHE_DIR/$JDK ]
   then
     OLDPWD=$(pwd)
-    cd $CACHE_DIR && wget $JDK_BLOB 
+    cd $CACHE_DIR && wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz
     cd $OLDPWD
   fi
   tar -xzf $CACHE_DIR/$JDK -C $BUILD_DIR/local
