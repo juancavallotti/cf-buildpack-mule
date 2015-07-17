@@ -20,8 +20,8 @@ echo $RESOURCES
 ls -alrt $RESOURCES
 
 # Files
-JDK_BLOB=http://storage.googleapis.com/rippmn/jdk-7u67-linux-x64.gz
-JDK=jdk-7u67-linux-x64.gz
+#JDK_BLOB=http://storage.googleapis.com/rippmn/jdk-7u67-linux-x64.gz
+JDK=jdk-7u67-linux-x64.tar.gz
 MULE_BLOB=https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz
 MULE=mule-standalone-3.7.0.tar.gz
 
