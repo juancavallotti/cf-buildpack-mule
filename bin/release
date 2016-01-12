@@ -2,8 +2,8 @@
 # bin/release <build-dir>
 
 
-MULE_HOME=$0/local/mule-standalone-3.7.0
-JAVA_HOME=$0/local/jdk1.7.0_67	
+MULE_HOME=$1/local/mule-standalone-3.7.0
+JAVA_HOME=$1/local/jdk1.7.0_67	
 
 
 cat << EOF
