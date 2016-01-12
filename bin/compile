@@ -32,7 +32,8 @@ ls -alrt $RESOURCES
 #JDK_BLOB=http://storage.googleapis.com/rippmn/jdk-7u67-linux-x64.gz
 JDK=jdk-7u67-linux-x64.tar.gz
 MULE_BLOB=https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.7.0/mule-standalone-3.7.0.tar.gz
-MULE=mule-standalone-3.7.0.tar.gz
+MULE_ESB_VER=mule-standalone-3.7.0
+MULE=$MULE_ESB_VER.tar.gz
 
 if [ ! -d $BUILD_DIR/local ]
 then
@@ -40,7 +41,7 @@ then
 fi
 
 # Explode the Mule tarball to BUILD_DIR
-if [ ! -e $BUILD_DIR/local/mule-standalone-3.7.0 ]
+if [ ! -e $BUILD_DIR/local/$MULE_ESB_VER ]
 then
   if [ ! -e $CACHE_DIR/$MULE ]
   then
@@ -53,7 +54,10 @@ then
   tar -xzf $CACHE_DIR/$MULE -C $BUILD_DIR/local
 fi
 
-find $BUILD_DIR/local
+ls -l $BUILD_DIR/local/$MULE_ESB_VER/bin
+
+chmod a+x $BUILD_DIR/local/$MULE_ESB_VER/bin/mule
+
 
 # Explode the OpenJDK tarball to BUILD_DIR
 #if [ ! -e $BUILD_DIR/local/jdk1.7.0_67 ]
