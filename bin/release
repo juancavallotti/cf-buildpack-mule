@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 # bin/release <build-dir>
 
-BUILD_DIR=$1
-CACHE_DIR=$2
-
-echo $BUILD_DIR
-
 cat << EOF
 addons: 
 config_vars:
-   MULE_HOME=/app/local/mule-standalone-3.7.0
-   JAVA_HOME=/app/local/jdk1.7.0_67	
+   MULE_HOME=/tmp/app/local/mule-standalone-3.7.0
+   JAVA_HOME=/tmp/app/local/jdk1.7.0_67	
 default_process_types:
    web: $MULE_HOME/bin/mule -M-Dhttp.port=\$PORT
 EOF
