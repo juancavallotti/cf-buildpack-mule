@@ -18,7 +18,9 @@ find $CACHE_DIR
 #a place to find the app before we start doing other stuff
 mkdir theApp
 find .
-mv app/* theApp/
+
+#once we upload a zip archive the file is exploded and placed into $BUILD_DIR/app
+mv $BUILD_DIR/app/* theApp/
 echo "created theApp directory"
 #create the directories to do work in 
 mkdir -p "$BUILD_DIR" "$CACHE_DIR"
