@@ -56,8 +56,6 @@ fi
 
 ls -l $BUILD_DIR/local/$MULE_ESB_VER/bin
 
-chmod a+x $BUILD_DIR/local/$MULE_ESB_VER/bin/mule
-
 
 # Explode the OpenJDK tarball to BUILD_DIR
 #if [ ! -e $BUILD_DIR/local/jdk1.7.0_67 ]
@@ -84,6 +82,8 @@ then
   fi
   tar -xzf $CACHE_DIR/$JDK -C $BUILD_DIR/local
 fi
+
+find $BUILD_DIR/local
 
 # Move the app into position
 pwd
