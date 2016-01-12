@@ -2,8 +2,8 @@
 # bin/release <build-dir>
 
 
-MULE_HOME=$(pwd)/local/mule-standalone-3.7.0
-JAVA_HOME=$(pwd)/local/jdk1.7.0_67	
+MULE_HOME=$(pwd)/app/local/mule-standalone-3.7.0
+JAVA_HOME=$(pwd)/app/local/jdk1.7.0_67	
 
 
 cat << EOF
@@ -12,5 +12,5 @@ config_vars:
    MULE_HOME: $MULE_HOME
    JAVA_HOME: $JAVA_HOME
 default_process_types:
-   web: $(pwd)/local/mule-standalone-3.7.0/bin/mule -M-Dhttp.port=\$PORT
+   web: $MULE_HOME/bin/mule -M-Dhttp.port=\$PORT
 EOF
