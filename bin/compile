@@ -10,8 +10,8 @@ CACHE_DIR=$2
 
 #a place to find the app before we start doing other stuff
 mkdir theApp
-ls -l
-mv app theApp/
+find .
+mv app/* theApp/
 echo "created theApp directory"
 #create the directories to do work in 
 mkdir -p "$BUILD_DIR" "$CACHE_DIR"
@@ -43,6 +43,8 @@ then
   echo "------> Installing Mule ($MULE)..."
   tar -xzf $CACHE_DIR/$MULE -C $BUILD_DIR/local
 fi
+
+find $BUILD_DIR/local
 
 # Explode the OpenJDK tarball to BUILD_DIR
 #if [ ! -e $BUILD_DIR/local/jdk1.7.0_67 ]
